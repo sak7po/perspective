@@ -88,9 +88,23 @@
              * synchronization between server and client, see
              * `client_server_editing.html`.
              */
-            const table = worker.table(server_view, {
-                index: await server_table.get_index()
-            });
+
+
+            const data = {
+                test_a: [],
+                test_b: [],
+                test_c: [],
+                test_d: []
+            };
+
+            for (let i = 0; i < 250; ++i) {
+                data.test_a.push(Math.random() * i);
+                data.test_b.push(Math.random() * i * 1.5);
+                data.test_c.push(Math.random() * i * 0.5);
+                data.test_d.push(Math.random() * i * 10);
+            }
+            // TODO fix
+            const table = worker.table(data);
             
             // Load the local table in the `<perspective-viewer>`.
             document.getElementById('viewer').load(table);
