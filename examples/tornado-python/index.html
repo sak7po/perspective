@@ -94,14 +94,16 @@
                 test_a: [],
                 test_b: [],
                 test_c: [],
-                test_d: []
+                test_d: [],
+                xyz: []
             };
 
             for (let i = 0; i < 250; ++i) {
-                data.test_a.push(Math.random() * i);
-                data.test_b.push(Math.random() * i * 1.5);
-                data.test_c.push(Math.random() * i * 0.5);
-                data.test_d.push(Math.random() * i * 10);
+                data.test_a.push(i);
+                data.test_b.push(null);
+                data.test_c.push(i * 3);
+                data.test_d.push(i * 4);
+                data.xyz.push(-i);
             }
             // TODO fix
             const table = worker.table(data);
