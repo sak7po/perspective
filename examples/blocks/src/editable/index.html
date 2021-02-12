@@ -44,7 +44,7 @@
     
         function on_load() {
             var el = document.getElementsByTagName('perspective-viewer')[0];
-            const table = WORKER.table(this.response);
+            const table = WORKER.table(this.response, {limit: 10});
             el.load(table);
             el.toggleConfig();
         }
